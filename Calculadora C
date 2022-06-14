@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+int opcao, num1, num2;
+/*Calculadora das operacoes*/
+do {
+printf("escolha sua operacao\n1 Soma\n2 Subtracao\n3 Multiplicacao\n4 Divisao\n\n");
+scanf("%d", &opcao);
+if(opcao > 0 && opcao < 5){ /* Comece digitando os Valores*/
+printf("Digite o primeiro valor: ");
+printf("Digite o segundo valor:");
+scanf("%d%d",&num1,&num2);
+}
+switch(opcao) {
+case 1:
+printf("resultado da Soma: %d\n", num1 + num2);
+break;
+case 2:
+printf("resultado da Subtracao: %d\n", num1 - num2);
+break;
+case 3:
+printf("resultado da Multiplicacao: %d\n", num1 * num2);
+break;
+case 4:
+while(num2 == 0) {
+printf("Nao existe divisao por zero!\nDigite outro valor: ");
+scanf("%d", &num2);
+}
+printf("resultado da Divisao: %d\n", num1 / num2);
+break;
+default:
+printf("Opcao inválida.\nDigite outra opcao: ");
+}
+} while(opcao != 0);
+}
